@@ -26,6 +26,7 @@ class Teacher:
 
     def set_experience(self, experience):
         self.__experience = experience
+        return self.__experience
 
     def get_teacher_data(self):
         return f'{self.get_name()}, образование {self.get_education()}, опыт работы {self.get_experience()} года.'
@@ -47,12 +48,13 @@ class Teacher:
             return f"Сотрудника {self.get_teacher_data()} уже уволили."
 
 
-teacher_1 = Teacher('Иван Петров', 'БГПУ', 4)
-print(teacher_1.get_teacher_data())
-print(teacher_1.add_mark('Петр Сидоров', 4))
-print(teacher_1.remove_mark('Петр Сидоров', 3))
-print(teacher_1.give_a_consultation('9Б'))
-print()
+# teacher_1 = Teacher('Иван Петров', 'БГПУ', 4)
+# print(teacher_1.get_experience())
+# print(teacher_1.get_teacher_data())
+# print(teacher_1.add_mark('Петр Сидоров', 4))
+# print(teacher_1.remove_mark('Петр Сидоров', 3))
+# print(teacher_1.give_a_consultation('9Б'))
+# print()
 
 
 class DisciplineTeacher(Teacher):
@@ -88,22 +90,22 @@ class DisciplineTeacher(Teacher):
                 f'По предмету {self.get_discipline()} как {self.get_job_title()}')
 
 
-discipline_teacher = DisciplineTeacher('Иван Петров', 'БГПУ', 4, 'Химия',
-                                       'Директор')
-discipline_teacher_2 = DisciplineTeacher('Сидор Иванов', 'БГПУ', 2, 'Биология',
-                                         'Завуч')
-print(discipline_teacher.get_teacher_data())
-print()
-print(discipline_teacher.add_mark('Николай Иванов', 4, 'Химия'))
-print()
-print(discipline_teacher.remove_mark('Дмитрий Сидоров', 3))
-print()
-print(discipline_teacher.give_a_consultation('10Б'))
-print()
-print('Список перед увольнением:')
-[print(teacher.get_teacher_data()) for teacher in Teacher.employers_list]
-print()
-print(discipline_teacher.fire_employer())
-print()
-print('Список после увольнения:')
-[print(teacher.get_teacher_data()) for teacher in Teacher.employers_list]
+# discipline_teacher = DisciplineTeacher('Иван Петров', 'БГПУ', 4, 'Химия',
+#                                        'Директор')
+# discipline_teacher_2 = DisciplineTeacher('Сидор Иванов', 'БГПУ', 2, 'Биология',
+#                                          'Завуч')
+# print(discipline_teacher.get_teacher_data())
+# print()
+# print(discipline_teacher.add_mark('Николай Иванов', 4, 'Химия'))
+# print()
+# print(discipline_teacher.remove_mark('Дмитрий Сидоров', 3))
+# print()
+# print(discipline_teacher.give_a_consultation('10Б'))
+# print()
+# print('Список перед увольнением:')
+# [print(teacher.get_teacher_data()) for teacher in Teacher.employers_list]
+# print()
+# print(discipline_teacher.fire_employer())
+# print()
+# print('Список после увольнения:')
+# [print(teacher.get_teacher_data()) for teacher in Teacher.employers_list]
